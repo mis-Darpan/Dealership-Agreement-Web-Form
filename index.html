@@ -376,16 +376,13 @@ input:focus,textarea:focus,select:focus{
     <a id="viewBtnFinal" class="view-btn" target="_blank">📄 View Agreement</a>
     <a id="downloadBtnFinal" class="download-btn" target="_blank">⬇️ Download PDF</a>
   </div>
-  <a id="signedPdfBtn" class="signed-pdf-btn" target="_blank" style="display:none;margin-top:14px;">
-    📄 View Signed Agreement
-  </a>
 </div>
 
 </div>
 </div>
 
 <script>
-const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwbxDFwXALPs3Gx81dwEBS3fDvFfpysYebWYdmHKEOSuDmmGzR0_R_CxKRIwMnx5rDB/exec";
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxldh-VGUKvkBBI-qp6KLKhzhnnRycNfGsPZGzhozGT5CBHKJwoRFf27ShoaPGMo3Gq/exec";
 
 let currentAgreementNo = "";
 
@@ -504,9 +501,8 @@ async function submitDocuments(){
       document.getElementById("finalSuccess").style.display = "block";
 
       if(result.signedPdfUrl){
-        const btn = document.getElementById("signedPdfBtn");
-        btn.href = result.signedPdfUrl;
-        btn.style.display = "inline-block";
+        document.getElementById("viewBtnFinal").href = result.signedPdfUrl;
+        document.getElementById("downloadBtnFinal").href = result.signedPdfUrl;
       }
     } else {
       alert("Upload Error: " + result.error);
