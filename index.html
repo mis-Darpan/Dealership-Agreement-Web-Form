@@ -300,7 +300,7 @@ input:focus,textarea:focus,select:focus{
   </div>
 
   <!-- View / Download PDF — visible after form submit -->
-  <div class="pdf-btn-wrap visible" id="pdfBtnWrap">
+  <div class="pdf-btn-wrap" id="pdfBtnWrap">
     <a id="viewBtn" class="view-btn" target="_blank">📄 View Agreement</a>
     <a id="downloadBtn" class="download-btn" target="_blank">⬇️ Download PDF</a>
   </div>
@@ -372,7 +372,11 @@ input:focus,textarea:focus,select:focus{
     Our team will review your application and contact you within <strong>3-5 business days</strong>.<br><br>
     Thank you for partnering with <strong>Litpax Technology Pvt Ltd</strong>!
   </p>
-  <a id="signedPdfBtn" class="signed-pdf-btn" target="_blank" style="display:none;">
+  <div class="pdf-btn-wrap" id="finalPdfBtns" style="display:flex;margin-top:24px;">
+    <a id="viewBtnFinal" class="view-btn" target="_blank">📄 View Agreement</a>
+    <a id="downloadBtnFinal" class="download-btn" target="_blank">⬇️ Download PDF</a>
+  </div>
+  <a id="signedPdfBtn" class="signed-pdf-btn" target="_blank" style="display:none;margin-top:14px;">
     📄 View Signed Agreement
   </a>
 </div>
@@ -381,7 +385,7 @@ input:focus,textarea:focus,select:focus{
 </div>
 
 <script>
-const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwAoqVpxS3w1M4RnUbZ4vGYMUDicuXD6wOCAlZXMbBn29Oa17K05IU4PMjhW_bl6_3f/exec";
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyzGy2pfiSlHZOTYFFAOQ_XXuDWisNDAaa5q0efst400emstYIN-pnoq7Naqj2NNiw/exec";
 
 let currentAgreementNo = "";
 
@@ -432,6 +436,8 @@ document.getElementById("agreementForm").addEventListener("submit", async functi
       document.getElementById("agreementNoDisplay").textContent = result.agreementNo;
       document.getElementById("viewBtn").href = result.pdfUrl;
       document.getElementById("downloadBtn").href = result.pdfUrl;
+      document.getElementById("viewBtnFinal").href = result.pdfUrl;
+      document.getElementById("downloadBtnFinal").href = result.pdfUrl;
     } else {
       alert("Error: " + result.error);
       document.getElementById("loader").style.display = "none";
