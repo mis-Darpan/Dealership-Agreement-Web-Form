@@ -40,20 +40,12 @@ body{
 }
 .litpax-top h1{font-size:42px;font-weight:800;color:#0f172a;margin-bottom:12px;}
 .litpax-top p{color:#64748b;font-size:16px;max-width:700px;margin:auto;line-height:1.7;}
-
-/* Section Heading */
 .section-heading{
   grid-column:1 / -1;
-  font-size:13px;
-  font-weight:800;
-  color:#2563eb;
-  text-transform:uppercase;
-  letter-spacing:1.5px;
-  padding:12px 0 4px;
-  border-bottom:2px solid #dbeafe;
-  margin-bottom:4px;
+  font-size:13px;font-weight:800;color:#2563eb;
+  text-transform:uppercase;letter-spacing:1.5px;
+  padding:12px 0 4px;border-bottom:2px solid #dbeafe;margin-bottom:4px;
 }
-
 .litpax-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
 .litpax-field{display:flex;flex-direction:column;gap:8px;}
 .litpax-full{grid-column:1 / -1;}
@@ -68,20 +60,8 @@ input:focus,textarea:focus,select:focus{
   border-color:#2563eb;background:white;
   box-shadow:0 0 0 5px rgba(37,99,235,0.10);
 }
-
-/* Territory & Channels highlight */
-.highlight-field input,
-.highlight-field textarea{
-  border-color:#bfdbfe;
-  background:#eff6ff;
-}
-.highlight-field input:focus,
-.highlight-field textarea:focus{
-  border-color:#2563eb;
-  background:white;
-  box-shadow:0 0 0 5px rgba(37,99,235,0.13);
-}
-
+.highlight-field input,.highlight-field textarea{border-color:#bfdbfe;background:#eff6ff;}
+.highlight-field input:focus,.highlight-field textarea:focus{border-color:#2563eb;background:white;box-shadow:0 0 0 5px rgba(37,99,235,0.13);}
 .litpax-btn{
   margin-top:28px;width:100%;border:none;outline:none;
   padding:20px;border-radius:22px;
@@ -90,36 +70,135 @@ input:focus,textarea:focus,select:focus{
   box-shadow:0 12px 35px rgba(37,99,235,0.25);
 }
 .litpax-btn:hover{transform:translateY(-3px);box-shadow:0 18px 45px rgba(37,99,235,0.35);}
+.litpax-btn:disabled{opacity:0.6;cursor:not-allowed;transform:none;}
 .loader{display:none;text-align:center;margin-top:22px;font-size:16px;font-weight:700;color:#2563eb;}
-.success-box{display:none;text-align:center;padding:25px 10px;}
-.success-box h2{font-size:38px;color:#16a34a;margin-bottom:12px;}
-.success-box p{color:#64748b;margin-bottom:24px;}
-.info-box{
-  background:#eff6ff;border:1px solid #bfdbfe;
-  padding:18px;border-radius:20px;font-weight:700;color:#1d4ed8;margin-bottom:25px;
+
+/* ── SUCCESS BOX ── */
+.success-box{display:none;padding:10px 0;}
+
+/* Alert banner */
+.alert-banner{
+  background:linear-gradient(135deg,#1e3a8a,#2563eb);
+  border-radius:22px;
+  padding:28px 32px;
+  color:white;
+  margin-bottom:28px;
+  text-align:left;
 }
-.btn-wrap{display:flex;gap:18px;}
-.btn-wrap a{
-  flex:1;text-decoration:none;padding:18px;border-radius:20px;
-  font-weight:800;color:white;transition:.3s;text-align:center;
+.alert-banner .agr-no{
+  font-size:13px;font-weight:700;opacity:0.8;
+  text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;
+}
+.alert-banner .agr-id{
+  font-size:22px;font-weight:800;margin-bottom:16px;
+}
+.alert-banner .agr-msg{
+  font-size:15px;line-height:1.75;opacity:0.92;
+}
+
+/* PDF buttons */
+.pdf-btn-wrap{display:flex;gap:14px;margin-bottom:32px;}
+.pdf-btn-wrap a{
+  flex:1;text-decoration:none;padding:16px;border-radius:18px;
+  font-weight:800;font-size:15px;color:white;transition:.3s;text-align:center;
 }
 .view-btn{background:#0f172a;}
 .download-btn{background:#16a34a;}
-.btn-wrap a:hover{transform:translateY(-3px);}
+.pdf-btn-wrap a:hover{transform:translateY(-2px);}
+
+/* Documents section */
+.docs-section{
+  background:#f8fafc;border:1px solid #dbe4f0;
+  border-radius:24px;padding:28px;margin-bottom:24px;
+}
+.docs-section h3{
+  font-size:16px;font-weight:800;color:#0f172a;
+  margin-bottom:6px;
+}
+.docs-section p.docs-sub{
+  font-size:13px;color:#64748b;margin-bottom:22px;line-height:1.6;
+}
+.doc-item{
+  display:flex;flex-direction:column;gap:6px;margin-bottom:18px;
+}
+.doc-item label{
+  font-size:14px;font-weight:700;color:#1e293b;
+  display:flex;align-items:flex-start;gap:8px;
+}
+.doc-num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:22px;height:22px;min-width:22px;
+  background:#2563eb;color:white;
+  border-radius:50%;font-size:11px;font-weight:800;margin-top:1px;
+}
+.doc-item input[type="file"]{
+  border-radius:14px;padding:12px 16px;
+  background:white;border:1.5px dashed #bfdbfe;
+  font-size:14px;cursor:pointer;
+}
+.doc-item input[type="file"]:hover{border-color:#2563eb;background:#eff6ff;}
+
+/* Declaration */
+.declaration-box{
+  background:#fffbeb;border:1.5px solid #fcd34d;
+  border-radius:20px;padding:22px 24px;margin-bottom:24px;
+}
+.declaration-box h3{font-size:15px;font-weight:800;color:#92400e;margin-bottom:10px;}
+.declaration-box p{font-size:14px;color:#78350f;line-height:1.7;margin-bottom:16px;}
+.checkbox-wrap{display:flex;align-items:flex-start;gap:12px;cursor:pointer;}
+.checkbox-wrap input[type="checkbox"]{
+  width:22px;height:22px;min-width:22px;
+  margin-top:2px;accent-color:#2563eb;cursor:pointer;
+  border-radius:6px;
+}
+.checkbox-wrap span{font-size:14px;font-weight:600;color:#1e293b;line-height:1.6;}
+
+/* Signature */
+.sign-section{
+  background:#f0fdf4;border:1.5px solid #86efac;
+  border-radius:20px;padding:22px 24px;margin-bottom:28px;
+}
+.sign-section h3{font-size:15px;font-weight:800;color:#14532d;margin-bottom:6px;}
+.sign-section p{font-size:13px;color:#166534;margin-bottom:14px;line-height:1.6;}
+.sign-section input[type="file"]{
+  width:100%;border-radius:14px;padding:14px 16px;
+  background:white;border:1.5px dashed #86efac;
+  font-size:14px;cursor:pointer;font-family:'Outfit',sans-serif;
+}
+.sign-section input[type="file"]:hover{border-color:#16a34a;background:#f0fdf4;}
+
+/* Final submit */
+.final-btn{
+  width:100%;border:none;outline:none;
+  padding:20px;border-radius:22px;
+  background:linear-gradient(135deg,#14532d,#16a34a);
+  color:white;font-size:18px;font-weight:800;cursor:pointer;transition:.35s;
+  box-shadow:0 12px 35px rgba(22,163,74,0.28);
+}
+.final-btn:hover{transform:translateY(-3px);box-shadow:0 18px 45px rgba(22,163,74,0.38);}
+.final-btn:disabled{opacity:0.5;cursor:not-allowed;transform:none;}
+
+/* Final success */
+.final-success{
+  display:none;text-align:center;padding:40px 20px;
+}
+.final-success h2{font-size:36px;font-weight:800;color:#16a34a;margin-bottom:12px;}
+.final-success p{color:#64748b;font-size:16px;line-height:1.7;}
 
 @media(max-width:850px){
   .litpax-grid{grid-template-columns:1fr;}
-  .litpax-card{padding:26px;}
-  .litpax-top h1{font-size:30px;}
-  .btn-wrap{flex-direction:column;}
+  .litpax-card{padding:22px;}
+  .litpax-top h1{font-size:28px;}
+  .pdf-btn-wrap{flex-direction:column;}
 }
 </style>
 </head>
 <body>
 <div class="litpax-wrapper">
 <div class="litpax-card">
-<div id="formBox">
 
+<!-- ══ STEP 1: AGREEMENT FORM ══ -->
+<div id="formBox">
   <div class="litpax-top">
     <div class="litpax-badge">LITPAX TECHNOLOGY PVT LTD</div>
     <h1>Dealer Agreement Form</h1>
@@ -129,77 +208,63 @@ input:focus,textarea:focus,select:focus{
   <form id="agreementForm">
     <div class="litpax-grid">
 
-      <!-- Business Info -->
       <div class="section-heading">Business Information</div>
 
       <div class="litpax-field">
         <label>Legal Business Name *</label>
         <input type="text" name="businessName" required>
       </div>
-
       <div class="litpax-field">
         <label>Contact Name *</label>
         <input type="text" name="contactName" required>
       </div>
-
       <div class="litpax-field litpax-full">
         <label>Street Address *</label>
         <textarea name="streetAddress" required></textarea>
       </div>
-
       <div class="litpax-field">
         <label>City</label>
         <input type="text" name="city">
       </div>
-
       <div class="litpax-field">
         <label>State</label>
         <input type="text" name="state">
       </div>
-
       <div class="litpax-field">
         <label>ZIP Code</label>
         <input type="text" name="zip">
       </div>
-
       <div class="litpax-field">
         <label>Phone Number</label>
         <input type="text" name="phone">
       </div>
-
       <div class="litpax-field">
         <label>Email Address *</label>
         <input type="email" name="email" required>
       </div>
-
       <div class="litpax-field">
         <label>Website</label>
         <input type="text" name="website">
       </div>
 
-      <!-- Business Details -->
       <div class="section-heading">Business Details</div>
 
       <div class="litpax-field">
         <label>GST Number</label>
         <input type="text" name="gst">
       </div>
-
       <div class="litpax-field">
         <label>PAN Number</label>
         <input type="text" name="pan">
       </div>
-
       <div class="litpax-field">
         <label>Years in Business</label>
         <input type="text" name="years">
       </div>
-
       <div class="litpax-field">
         <label>Number of Locations</label>
         <input type="text" name="locations">
       </div>
-
       <div class="litpax-field">
         <label>Ownership Type</label>
         <select name="ownership">
@@ -211,12 +276,10 @@ input:focus,textarea:focus,select:focus{
           <option>Other</option>
         </select>
       </div>
-
       <div class="litpax-field">
         <label>Authorized Purchasers</label>
         <input type="text" name="purchasers">
       </div>
-
       <div class="litpax-field">
         <label>Dealer Type</label>
         <select name="dealerType">
@@ -224,18 +287,16 @@ input:focus,textarea:focus,select:focus{
           <option>Dealer</option>
           <option>Distributor</option>
           <option>Service Partner</option>
-          <option>Dealer & Service Partner</option>
+          <option>Dealer &amp; Service Partner</option>
         </select>
       </div>
 
-      <!-- Territory & Sales Channels — NEW SECTION -->
       <div class="section-heading">Territory &amp; Sales Channels</div>
 
       <div class="litpax-field litpax-full highlight-field">
         <label>Territory *</label>
         <input type="text" name="territory" placeholder="e.g. Haryana, Punjab, Delhi NCR" required>
       </div>
-
       <div class="litpax-field litpax-full highlight-field">
         <label>Sales Channels *</label>
         <input type="text" name="channels" placeholder="e.g. Retail, Online, B2B, Service Centers" required>
@@ -246,29 +307,121 @@ input:focus,textarea:focus,select:focus{
     <button class="litpax-btn" id="submitBtn">Generate Agreement PDF</button>
     <div class="loader" id="loader">Generating Agreement PDF...</div>
   </form>
+</div>
+
+<!-- ══ STEP 2: SUCCESS + DOCUMENTS ══ -->
+<div class="success-box" id="successBox">
+
+  <!-- Alert Banner -->
+  <div class="alert-banner">
+    <div class="agr-no">Agreement Number</div>
+    <div class="agr-id" id="agreementNoDisplay">LIT-AGR-XXXXXXXX</div>
+    <div class="agr-msg">
+      Your Agreement has been generated successfully! Please read your agreement carefully.<br><br>
+      To complete your dealership registration, kindly:<br>
+      &nbsp;&nbsp;① Download &amp; review the agreement thoroughly<br>
+      &nbsp;&nbsp;② Upload all required documents listed below<br>
+      &nbsp;&nbsp;③ Accept the declaration<br>
+      &nbsp;&nbsp;④ Upload your signed agreement &amp; submit<br><br>
+      <strong>⚠️ Incomplete submissions will delay the approval process.</strong>
+    </div>
+  </div>
+
+  <!-- View / Download PDF -->
+  <div class="pdf-btn-wrap">
+    <a id="viewBtn" class="view-btn" target="_blank">📄 View Agreement</a>
+    <a id="downloadBtn" class="download-btn" target="_blank">⬇️ Download PDF</a>
+  </div>
+
+  <!-- Required Documents -->
+  <div class="docs-section">
+    <h3>📎 Required Documents</h3>
+    <p class="docs-sub">Please upload all the following documents. Accepted formats: PDF, JPG, PNG (max 10MB each).</p>
+
+    <div class="doc-item">
+      <label><span class="doc-num">1</span>Completed and Signed Distributor Application</label>
+      <input type="file" id="doc1" accept=".pdf,.jpg,.jpeg,.png">
+    </div>
+
+    <div class="doc-item">
+      <label><span class="doc-num">2</span>Copy of GST Certificate</label>
+      <input type="file" id="doc2" accept=".pdf,.jpg,.jpeg,.png">
+    </div>
+
+    <div class="doc-item">
+      <label><span class="doc-num">3</span>Brief Summary of Your Company's Business, Products &amp; Strategy (1 paragraph)</label>
+      <input type="file" id="doc3" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
+    </div>
+
+    <div class="doc-item">
+      <label><span class="doc-num">4</span>Photos of Retail / Commercial Business Location</label>
+      <input type="file" id="doc4" accept=".jpg,.jpeg,.png" multiple>
+    </div>
+    <p style="font-size:12px;color:#94a3b8;margin-top:-10px;margin-bottom:0;padding-left:30px;">
+      Include: storefront with signage, merchandising area, and service/repair area (if available)
+    </p>
+  </div>
+
+  <!-- Declaration -->
+  <div class="declaration-box">
+    <h3>📋 Declaration</h3>
+    <p>
+      I/We hereby declare that all the information provided in this application is true, correct and complete to the best of my/our knowledge. I/We have read the Litpax Technology Pvt Ltd Dealer Agreement carefully and agree to abide by all the terms and conditions mentioned therein. I/We understand that any false or misleading information may result in rejection or termination of the dealership.
+    </p>
+    <label class="checkbox-wrap">
+      <input type="checkbox" id="declarationCheck">
+      <span>I have read and understood the Dealer Agreement. I accept all terms &amp; conditions and confirm that the above declaration is true.</span>
+    </label>
+  </div>
+
+  <!-- Signature Upload -->
+  <div class="sign-section">
+    <h3>✍️ Upload Signed Agreement</h3>
+    <p>Please sign the downloaded agreement and upload the scanned copy or clear photo here.</p>
+    <input type="file" id="signatureFile" accept=".pdf,.jpg,.jpeg,.png">
+  </div>
+
+  <!-- Final Submit -->
+  <button class="final-btn" id="finalSubmitBtn" disabled onclick="submitDocuments()">
+    Submit Documents &amp; Complete Registration
+  </button>
+  <div class="loader" id="loader2" style="margin-top:16px;">Uploading documents, please wait...</div>
 
 </div>
 
-<div class="success-box" id="successBox">
-  <h2>✅ Success</h2>
-  <p>Your agreement PDF has been generated successfully.</p>
-  <div class="info-box" id="agreementInfo">Agreement Generated</div>
-  <div class="btn-wrap">
-    <a id="viewBtn" class="view-btn" target="_blank">View Agreement</a>
-    <a id="downloadBtn" class="download-btn" target="_blank">Download PDF</a>
-  </div>
+<!-- ══ STEP 3: FINAL SUCCESS ══ -->
+<div class="final-success" id="finalSuccess">
+  <h2>🎉 Registration Complete!</h2>
+  <p>
+    Your documents have been submitted successfully.<br>
+    Our team will review your application and contact you within <strong>3-5 business days</strong>.<br><br>
+    Thank you for partnering with <strong>Litpax Technology Pvt Ltd</strong>!
+  </p>
 </div>
 
 </div>
 </div>
 
 <script>
-const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxVmGqyoD98dRla4VZjKGC4slBJF3P5VKtz_Z57rBYC8Uov_vIp7l02q54Vv_7E_1d0/exec";
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwQVUzs6xohSWSqSp4Ocx23Yw-F-_RbHLoMw6NL0KwBGk84SXj2IhvGc25KnmVJq45k/exec";
 
+let currentAgreementNo = "";
+
+// Enable final submit only when checkbox is checked AND signature uploaded
+document.getElementById("declarationCheck").addEventListener("change", checkFinalBtn);
+document.getElementById("signatureFile").addEventListener("change", checkFinalBtn);
+
+function checkFinalBtn(){
+  const checked = document.getElementById("declarationCheck").checked;
+  const signed  = document.getElementById("signatureFile").files.length > 0;
+  document.getElementById("finalSubmitBtn").disabled = !(checked && signed);
+}
+
+// ── STEP 1: Generate Agreement PDF ──
 document.getElementById("agreementForm").addEventListener("submit", async function(e){
   e.preventDefault();
-
   document.getElementById("loader").style.display = "block";
+  document.getElementById("submitBtn").disabled = true;
   document.getElementById("submitBtn").innerHTML = "Please wait...";
 
   const formData = {
@@ -288,35 +441,103 @@ document.getElementById("agreementForm").addEventListener("submit", async functi
     ownership:     document.querySelector("[name='ownership']").value,
     purchasers:    document.querySelector("[name='purchasers']").value,
     dealerType:    document.querySelector("[name='dealerType']").value,
-    territory:     document.querySelector("[name='territory']").value,   // NEW
-    channels:      document.querySelector("[name='channels']").value      // NEW
+    territory:     document.querySelector("[name='territory']").value,
+    channels:      document.querySelector("[name='channels']").value
   };
 
   try {
-    const response = await fetch(WEB_APP_URL, {
-      method: "POST",
-      body: JSON.stringify(formData)
-    });
+    const response = await fetch(WEB_APP_URL, { method:"POST", body:JSON.stringify(formData) });
     const result = await response.json();
 
     if(result.success){
+      currentAgreementNo = result.agreementNo;
       document.getElementById("formBox").style.display = "none";
       document.getElementById("successBox").style.display = "block";
-      document.getElementById("agreementInfo").innerHTML =
-        `Agreement No: <b>${result.agreementNo}</b>`;
+      document.getElementById("agreementNoDisplay").textContent = result.agreementNo;
       document.getElementById("viewBtn").href = result.pdfUrl;
       document.getElementById("downloadBtn").href = result.pdfUrl;
     } else {
-      alert(result.error);
+      alert("Error: " + result.error);
       document.getElementById("loader").style.display = "none";
+      document.getElementById("submitBtn").disabled = false;
       document.getElementById("submitBtn").innerHTML = "Generate Agreement PDF";
     }
   } catch(err){
-    alert(err);
+    alert("Error: " + err);
     document.getElementById("loader").style.display = "none";
+    document.getElementById("submitBtn").disabled = false;
     document.getElementById("submitBtn").innerHTML = "Generate Agreement PDF";
   }
 });
+
+// ── STEP 2: Upload Documents ──
+async function fileToBase64(file){
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result.split(",")[1]);
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+async function submitDocuments(){
+  document.getElementById("finalSubmitBtn").disabled = true;
+  document.getElementById("loader2").style.display = "block";
+
+  try {
+    const docs = [];
+
+    const docInputs = [
+      { id:"doc1", name:"Distributor_Application" },
+      { id:"doc2", name:"GST_Certificate" },
+      { id:"doc3", name:"Company_Summary" },
+      { id:"doc4", name:"Business_Photos" }
+    ];
+
+    for(const d of docInputs){
+      const input = document.getElementById(d.id);
+      for(const file of input.files){
+        const b64 = await fileToBase64(file);
+        docs.push({
+          name: d.name + "_" + file.name,
+          mimeType: file.type,
+          data: b64
+        });
+      }
+    }
+
+    // Signature
+    const signFile = document.getElementById("signatureFile").files[0];
+    const signB64 = await fileToBase64(signFile);
+    docs.push({
+      name: "Signature_" + signFile.name,
+      mimeType: signFile.type,
+      data: signB64
+    });
+
+    const payload = {
+      action: "uploadDocs",
+      agreementNo: currentAgreementNo,
+      files: docs
+    };
+
+    const response = await fetch(WEB_APP_URL, { method:"POST", body:JSON.stringify(payload) });
+    const result = await response.json();
+
+    if(result.success){
+      document.getElementById("successBox").style.display = "none";
+      document.getElementById("finalSuccess").style.display = "block";
+    } else {
+      alert("Upload Error: " + result.error);
+      document.getElementById("finalSubmitBtn").disabled = false;
+      document.getElementById("loader2").style.display = "none";
+    }
+  } catch(err){
+    alert("Upload Error: " + err);
+    document.getElementById("finalSubmitBtn").disabled = false;
+    document.getElementById("loader2").style.display = "none";
+  }
+}
 </script>
 </body>
 </html>
