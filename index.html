@@ -3,544 +3,320 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
 <title>Litpax Dealer Agreement Form</title>
-
 <style>
-
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;}
 body{
   font-family:'Outfit',sans-serif;
   background:
-  radial-gradient(circle at top left,#2563eb22,transparent 30%),
-  radial-gradient(circle at bottom right,#1e3a8a22,transparent 30%),
-  linear-gradient(135deg,#f8fbff,#eef4ff,#ffffff);
+    radial-gradient(circle at top left,#2563eb22,transparent 30%),
+    radial-gradient(circle at bottom right,#1e3a8a22,transparent 30%),
+    linear-gradient(135deg,#f8fbff,#eef4ff,#ffffff);
   min-height:100vh;
   padding:35px 18px;
 }
-
-.litpax-wrapper{
-  max-width:1150px;
-  margin:auto;
-}
-
+.litpax-wrapper{max-width:1150px;margin:auto;}
 .litpax-card{
   background:rgba(255,255,255,0.92);
   backdrop-filter:blur(14px);
   border:1px solid rgba(255,255,255,0.7);
   border-radius:34px;
   padding:40px;
-  box-shadow:
-  0 15px 45px rgba(15,23,42,0.10),
-  inset 0 1px 0 rgba(255,255,255,0.5);
+  box-shadow:0 15px 45px rgba(15,23,42,0.10),inset 0 1px 0 rgba(255,255,255,0.5);
   overflow:hidden;
   position:relative;
 }
-
 .litpax-card::before{
-  content:'';
-  position:absolute;
-  width:420px;
-  height:420px;
+  content:'';position:absolute;
+  width:420px;height:420px;
   background:radial-gradient(circle,#2563eb20,transparent 70%);
-  top:-180px;
-  right:-120px;
+  top:-180px;right:-120px;
 }
-
-.litpax-top{
-  position:relative;
-  z-index:2;
-  text-align:center;
-  margin-bottom:35px;
-}
-
+.litpax-top{position:relative;z-index:2;text-align:center;margin-bottom:35px;}
 .litpax-badge{
-  display:inline-block;
-  padding:10px 18px;
-  border-radius:999px;
-  background:#dbeafe;
-  color:#1d4ed8;
-  font-size:13px;
-  font-weight:700;
-  margin-bottom:18px;
+  display:inline-block;padding:10px 18px;border-radius:999px;
+  background:#dbeafe;color:#1d4ed8;font-size:13px;font-weight:700;margin-bottom:18px;
 }
+.litpax-top h1{font-size:42px;font-weight:800;color:#0f172a;margin-bottom:12px;}
+.litpax-top p{color:#64748b;font-size:16px;max-width:700px;margin:auto;line-height:1.7;}
 
-.litpax-top h1{
-  font-size:42px;
-  font-weight:800;
-  color:#0f172a;
-  margin-bottom:12px;
-}
-
-.litpax-top p{
-  color:#64748b;
-  font-size:16px;
-  max-width:700px;
-  margin:auto;
-  line-height:1.7;
-}
-
-.litpax-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:22px;
-}
-
-.litpax-field{
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-}
-
-.litpax-full{
+/* Section Heading */
+.section-heading{
   grid-column:1 / -1;
+  font-size:13px;
+  font-weight:800;
+  color:#2563eb;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  padding:12px 0 4px;
+  border-bottom:2px solid #dbeafe;
+  margin-bottom:4px;
 }
 
-label{
-  font-size:14px;
-  font-weight:700;
-  color:#1e293b;
+.litpax-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+.litpax-field{display:flex;flex-direction:column;gap:8px;}
+.litpax-full{grid-column:1 / -1;}
+label{font-size:14px;font-weight:700;color:#1e293b;}
+input,textarea,select{
+  width:100%;border:none;outline:none;border-radius:18px;
+  padding:18px 18px;background:#f8fafc;border:1px solid #dbe4f0;
+  font-size:15px;font-family:'Outfit',sans-serif;transition:.28s;
 }
-
-input,
-textarea,
-select{
-  width:100%;
-  border:none;
-  outline:none;
-  border-radius:18px;
-  padding:18px 18px;
-  background:#f8fafc;
-  border:1px solid #dbe4f0;
-  font-size:15px;
-  font-family:'Outfit',sans-serif;
-  transition:.28s;
-}
-
-textarea{
-  min-height:110px;
-  resize:vertical;
-}
-
-input:focus,
-textarea:focus,
-select:focus{
-  border-color:#2563eb;
-  background:white;
+textarea{min-height:110px;resize:vertical;}
+input:focus,textarea:focus,select:focus{
+  border-color:#2563eb;background:white;
   box-shadow:0 0 0 5px rgba(37,99,235,0.10);
 }
 
-.litpax-btn{
-  margin-top:28px;
-  width:100%;
-  border:none;
-  outline:none;
-  padding:20px;
-  border-radius:22px;
-  background:linear-gradient(135deg,#1e3a8a,#2563eb);
-  color:white;
-  font-size:18px;
-  font-weight:800;
-  cursor:pointer;
-  transition:.35s;
-  box-shadow:
-  0 12px 35px rgba(37,99,235,0.25);
-}
-
-.litpax-btn:hover{
-  transform:translateY(-3px);
-  box-shadow:
-  0 18px 45px rgba(37,99,235,0.35);
-}
-
-.loader{
-  display:none;
-  text-align:center;
-  margin-top:22px;
-  font-size:16px;
-  font-weight:700;
-  color:#2563eb;
-}
-
-.success-box{
-  display:none;
-  text-align:center;
-  padding:25px 10px;
-}
-
-.success-box h2{
-  font-size:38px;
-  color:#16a34a;
-  margin-bottom:12px;
-}
-
-.success-box p{
-  color:#64748b;
-  margin-bottom:24px;
-}
-
-.info-box{
+/* Territory & Channels highlight */
+.highlight-field input,
+.highlight-field textarea{
+  border-color:#bfdbfe;
   background:#eff6ff;
-  border:1px solid #bfdbfe;
-  padding:18px;
-  border-radius:20px;
-  font-weight:700;
-  color:#1d4ed8;
-  margin-bottom:25px;
+}
+.highlight-field input:focus,
+.highlight-field textarea:focus{
+  border-color:#2563eb;
+  background:white;
+  box-shadow:0 0 0 5px rgba(37,99,235,0.13);
 }
 
-.btn-wrap{
-  display:flex;
-  gap:18px;
+.litpax-btn{
+  margin-top:28px;width:100%;border:none;outline:none;
+  padding:20px;border-radius:22px;
+  background:linear-gradient(135deg,#1e3a8a,#2563eb);
+  color:white;font-size:18px;font-weight:800;cursor:pointer;transition:.35s;
+  box-shadow:0 12px 35px rgba(37,99,235,0.25);
 }
-
+.litpax-btn:hover{transform:translateY(-3px);box-shadow:0 18px 45px rgba(37,99,235,0.35);}
+.loader{display:none;text-align:center;margin-top:22px;font-size:16px;font-weight:700;color:#2563eb;}
+.success-box{display:none;text-align:center;padding:25px 10px;}
+.success-box h2{font-size:38px;color:#16a34a;margin-bottom:12px;}
+.success-box p{color:#64748b;margin-bottom:24px;}
+.info-box{
+  background:#eff6ff;border:1px solid #bfdbfe;
+  padding:18px;border-radius:20px;font-weight:700;color:#1d4ed8;margin-bottom:25px;
+}
+.btn-wrap{display:flex;gap:18px;}
 .btn-wrap a{
-  flex:1;
-  text-decoration:none;
-  padding:18px;
-  border-radius:20px;
-  font-weight:800;
-  color:white;
-  transition:.3s;
+  flex:1;text-decoration:none;padding:18px;border-radius:20px;
+  font-weight:800;color:white;transition:.3s;text-align:center;
 }
-
-.view-btn{
-  background:#0f172a;
-}
-
-.download-btn{
-  background:#16a34a;
-}
-
-.btn-wrap a:hover{
-  transform:translateY(-3px);
-}
+.view-btn{background:#0f172a;}
+.download-btn{background:#16a34a;}
+.btn-wrap a:hover{transform:translateY(-3px);}
 
 @media(max-width:850px){
-
-  .litpax-grid{
-    grid-template-columns:1fr;
-  }
-
-  .litpax-card{
-    padding:26px;
-  }
-
-  .litpax-top h1{
-    font-size:30px;
-  }
-
-  .btn-wrap{
-    flex-direction:column;
-  }
-
+  .litpax-grid{grid-template-columns:1fr;}
+  .litpax-card{padding:26px;}
+  .litpax-top h1{font-size:30px;}
+  .btn-wrap{flex-direction:column;}
 }
-
 </style>
 </head>
-
 <body>
-
 <div class="litpax-wrapper">
-
 <div class="litpax-card">
-
 <div id="formBox">
 
-<div class="litpax-top">
+  <div class="litpax-top">
+    <div class="litpax-badge">LITPAX TECHNOLOGY PVT LTD</div>
+    <h1>Dealer Agreement Form</h1>
+    <p>Fill all required details below to instantly generate your official Litpax Dealer Agreement PDF.</p>
+  </div>
 
-<div class="litpax-badge">
-LITPAX TECHNOLOGY PVT LTD
-</div>
+  <form id="agreementForm">
+    <div class="litpax-grid">
 
-<h1>Dealer Agreement Form</h1>
+      <!-- Business Info -->
+      <div class="section-heading">Business Information</div>
 
-<p>
-Fill all required details below to instantly generate
-your official Litpax Dealer Agreement PDF.
-</p>
+      <div class="litpax-field">
+        <label>Legal Business Name *</label>
+        <input type="text" name="businessName" required>
+      </div>
 
-</div>
+      <div class="litpax-field">
+        <label>Contact Name *</label>
+        <input type="text" name="contactName" required>
+      </div>
 
-<form id="agreementForm">
+      <div class="litpax-field litpax-full">
+        <label>Street Address *</label>
+        <textarea name="streetAddress" required></textarea>
+      </div>
 
-<div class="litpax-grid">
+      <div class="litpax-field">
+        <label>City</label>
+        <input type="text" name="city">
+      </div>
 
-<div class="litpax-field">
-<label>Legal Business Name *</label>
-<input type="text" name="businessName" required>
-</div>
+      <div class="litpax-field">
+        <label>State</label>
+        <input type="text" name="state">
+      </div>
 
-<div class="litpax-field">
-<label>Contact Name *</label>
-<input type="text" name="contactName" required>
-</div>
+      <div class="litpax-field">
+        <label>ZIP Code</label>
+        <input type="text" name="zip">
+      </div>
 
-<div class="litpax-field litpax-full">
-<label>Street Address *</label>
-<textarea name="streetAddress" required></textarea>
-</div>
+      <div class="litpax-field">
+        <label>Phone Number</label>
+        <input type="text" name="phone">
+      </div>
 
-<div class="litpax-field">
-<label>City</label>
-<input type="text" name="city">
-</div>
+      <div class="litpax-field">
+        <label>Email Address *</label>
+        <input type="email" name="email" required>
+      </div>
 
-<div class="litpax-field">
-<label>State</label>
-<input type="text" name="state">
-</div>
+      <div class="litpax-field">
+        <label>Website</label>
+        <input type="text" name="website">
+      </div>
 
-<div class="litpax-field">
-<label>ZIP Code</label>
-<input type="text" name="zip">
-</div>
+      <!-- Business Details -->
+      <div class="section-heading">Business Details</div>
 
-<div class="litpax-field">
-<label>Phone Number</label>
-<input type="text" name="phone">
-</div>
+      <div class="litpax-field">
+        <label>GST Number</label>
+        <input type="text" name="gst">
+      </div>
 
-<div class="litpax-field">
-<label>Email Address *</label>
-<input type="email" name="email" required>
-</div>
+      <div class="litpax-field">
+        <label>PAN Number</label>
+        <input type="text" name="pan">
+      </div>
 
-<div class="litpax-field">
-<label>Website</label>
-<input type="text" name="website">
-</div>
+      <div class="litpax-field">
+        <label>Years in Business</label>
+        <input type="text" name="years">
+      </div>
 
-<div class="litpax-field">
-<label>GST Number</label>
-<input type="text" name="gst">
-</div>
+      <div class="litpax-field">
+        <label>Number of Locations</label>
+        <input type="text" name="locations">
+      </div>
 
-<div class="litpax-field">
-<label>PAN Number</label>
-<input type="text" name="pan">
-</div>
+      <div class="litpax-field">
+        <label>Ownership Type</label>
+        <select name="ownership">
+          <option value="">Select</option>
+          <option>Proprietorship</option>
+          <option>Partnership</option>
+          <option>Private Limited</option>
+          <option>LLP</option>
+          <option>Other</option>
+        </select>
+      </div>
 
-<div class="litpax-field">
-<label>Years in Business</label>
-<input type="text" name="years">
-</div>
+      <div class="litpax-field">
+        <label>Authorized Purchasers</label>
+        <input type="text" name="purchasers">
+      </div>
 
-<div class="litpax-field">
-<label>Number of Locations</label>
-<input type="text" name="locations">
-</div>
+      <div class="litpax-field">
+        <label>Dealer Type</label>
+        <select name="dealerType">
+          <option value="">Select</option>
+          <option>Dealer</option>
+          <option>Distributor</option>
+          <option>Service Partner</option>
+          <option>Dealer & Service Partner</option>
+        </select>
+      </div>
 
-<div class="litpax-field">
-<label>Ownership Type</label>
+      <!-- Territory & Sales Channels — NEW SECTION -->
+      <div class="section-heading">Territory &amp; Sales Channels</div>
 
-<select name="ownership">
+      <div class="litpax-field litpax-full highlight-field">
+        <label>Territory *</label>
+        <input type="text" name="territory" placeholder="e.g. Haryana, Punjab, Delhi NCR" required>
+      </div>
 
-<option value="">Select</option>
-<option>Proprietorship</option>
-<option>Partnership</option>
-<option>Private Limited</option>
-<option>LLP</option>
-<option>Other</option>
+      <div class="litpax-field litpax-full highlight-field">
+        <label>Sales Channels *</label>
+        <input type="text" name="channels" placeholder="e.g. Retail, Online, B2B, Service Centers" required>
+      </div>
 
-</select>
+    </div>
 
-</div>
-
-<div class="litpax-field">
-<label>Authorized Purchasers</label>
-<input type="text" name="purchasers">
-</div>
-
-<div class="litpax-field">
-<label>Dealer Type</label>
-
-<select name="dealerType">
-
-<option value="">Select</option>
-<option>Dealer</option>
-<option>Distributor</option>
-<option>Service Partner</option>
-<option>Dealer & Service Partner</option>
-
-</select>
-
-</div>
-
-</div>
-
-<button class="litpax-btn" id="submitBtn">
-Generate Agreement PDF
-</button>
-
-<div class="loader" id="loader">
-Generating Agreement PDF...
-</div>
-
-</form>
+    <button class="litpax-btn" id="submitBtn">Generate Agreement PDF</button>
+    <div class="loader" id="loader">Generating Agreement PDF...</div>
+  </form>
 
 </div>
 
 <div class="success-box" id="successBox">
-
-<h2>✅ Success</h2>
-
-<p>
-Your agreement PDF has been generated successfully.
-</p>
-
-<div class="info-box" id="agreementInfo">
-Agreement Generated
-</div>
-
-<div class="btn-wrap">
-
-<a
-id="viewBtn"
-class="view-btn"
-target="_blank"
->
-View Agreement
-</a>
-
-<a
-id="downloadBtn"
-class="download-btn"
-target="_blank"
->
-Download PDF
-</a>
-
+  <h2>✅ Success</h2>
+  <p>Your agreement PDF has been generated successfully.</p>
+  <div class="info-box" id="agreementInfo">Agreement Generated</div>
+  <div class="btn-wrap">
+    <a id="viewBtn" class="view-btn" target="_blank">View Agreement</a>
+    <a id="downloadBtn" class="download-btn" target="_blank">Download PDF</a>
+  </div>
 </div>
 
 </div>
-
-</div>
-
 </div>
 
 <script>
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzuz-ZZvYXKHKQyNlTALKqdL8GblGViDswGy50LfzQ47yLzH7lwm7_fTX7sYci0AwHE/exec";
 
-const WEB_APP_URL =
-"https://script.google.com/macros/s/AKfycbwBlh1LWVKVRbEiCeX23LXhezOAqH9uTinmkP_IhWs_nubMfmCReBrh5lzcx-hhIATjXQ/exec";
+document.getElementById("agreementForm").addEventListener("submit", async function(e){
+  e.preventDefault();
 
-document
-.getElementById("agreementForm")
-.addEventListener("submit", async function(e){
+  document.getElementById("loader").style.display = "block";
+  document.getElementById("submitBtn").innerHTML = "Please wait...";
 
-e.preventDefault();
+  const formData = {
+    businessName:  document.querySelector("[name='businessName']").value,
+    contactName:   document.querySelector("[name='contactName']").value,
+    streetAddress: document.querySelector("[name='streetAddress']").value,
+    city:          document.querySelector("[name='city']").value,
+    state:         document.querySelector("[name='state']").value,
+    zip:           document.querySelector("[name='zip']").value,
+    phone:         document.querySelector("[name='phone']").value,
+    email:         document.querySelector("[name='email']").value,
+    website:       document.querySelector("[name='website']").value,
+    gst:           document.querySelector("[name='gst']").value,
+    pan:           document.querySelector("[name='pan']").value,
+    years:         document.querySelector("[name='years']").value,
+    locations:     document.querySelector("[name='locations']").value,
+    ownership:     document.querySelector("[name='ownership']").value,
+    purchasers:    document.querySelector("[name='purchasers']").value,
+    dealerType:    document.querySelector("[name='dealerType']").value,
+    territory:     document.querySelector("[name='territory']").value,   // NEW
+    channels:      document.querySelector("[name='channels']").value      // NEW
+  };
 
-document.getElementById("loader").style.display = "block";
+  try {
+    const response = await fetch(WEB_APP_URL, {
+      method: "POST",
+      body: JSON.stringify(formData)
+    });
+    const result = await response.json();
 
-document.getElementById("submitBtn").innerHTML =
-"Please wait...";
-
-const formData = {
-
-businessName:
-document.querySelector("[name='businessName']").value,
-
-contactName:
-document.querySelector("[name='contactName']").value,
-
-streetAddress:
-document.querySelector("[name='streetAddress']").value,
-
-city:
-document.querySelector("[name='city']").value,
-
-state:
-document.querySelector("[name='state']").value,
-
-zip:
-document.querySelector("[name='zip']").value,
-
-phone:
-document.querySelector("[name='phone']").value,
-
-email:
-document.querySelector("[name='email']").value,
-
-website:
-document.querySelector("[name='website']").value,
-
-gst:
-document.querySelector("[name='gst']").value,
-
-pan:
-document.querySelector("[name='pan']").value,
-
-years:
-document.querySelector("[name='years']").value,
-
-locations:
-document.querySelector("[name='locations']").value,
-
-ownership:
-document.querySelector("[name='ownership']").value,
-
-purchasers:
-document.querySelector("[name='purchasers']").value,
-
-dealerType:
-document.querySelector("[name='dealerType']").value
-
-};
-
-try {
-
-const response = await fetch(WEB_APP_URL, {
-
-method:"POST",
-
-body:JSON.stringify(formData)
-
+    if(result.success){
+      document.getElementById("formBox").style.display = "none";
+      document.getElementById("successBox").style.display = "block";
+      document.getElementById("agreementInfo").innerHTML =
+        `Agreement No: <b>${result.agreementNo}</b>`;
+      document.getElementById("viewBtn").href = result.pdfUrl;
+      document.getElementById("downloadBtn").href = result.pdfUrl;
+    } else {
+      alert(result.error);
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("submitBtn").innerHTML = "Generate Agreement PDF";
+    }
+  } catch(err){
+    alert(err);
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("submitBtn").innerHTML = "Generate Agreement PDF";
+  }
 });
-
-const result = await response.json();
-
-if(result.success){
-
-document.getElementById("formBox").style.display =
-"none";
-
-document.getElementById("successBox").style.display =
-"block";
-
-document.getElementById("agreementInfo").innerHTML =
-`
-Agreement No:
-<b>${result.agreementNo}</b>
-`;
-
-document.getElementById("viewBtn").href =
-result.pdfUrl;
-
-document.getElementById("downloadBtn").href =
-result.pdfUrl;
-
-} else {
-
-alert(result.error);
-
-}
-
-} catch(err){
-
-alert(err);
-
-}
-
-});
-
 </script>
-
 </body>
 </html>
